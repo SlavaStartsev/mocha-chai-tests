@@ -1,13 +1,11 @@
-import React from 'react';
+import React from "react";
 
-export const Component = React.createClass({
-  render() {
-    const { todo } = this.props;
+export const Component = (props) => {
+  const {todo} = props;
 
-    return (
-      <div className="todo">
-        {todo}
-      </div>
-    );
-  }
-});
+  return (
+    <div className="todo">
+      {todo}
+    </div>
+  );
+};
