@@ -4,7 +4,7 @@ Read info bellow to setup project with mocha chai testing modules.
 
 ## Steps
 
-- npm install --save mocha chai jsdom react-addons-test-utils babel-register
+- npm install --save mocha chai jsdom react-addons-test-utils babel-register babel-preset-es2015
 - create .babelrc
 - create test folder inside src and write setup.js or whatever you call it to simulate DOM
 - create basic test to verify everything runs correctly
