@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register --require ./src/test/setup.js ./src/test/*.test.js",
     "eject": "react-scripts eject"
   }
 }
