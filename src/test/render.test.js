@@ -16,7 +16,7 @@ describe('Component', () => {
     );
     const todoEle = findRenderedDOMComponentWithClass(component, 'todo');
 
-    expect(todo).to.be.ok;
+    expect(todoEle).to.be.ok;
   });
 
   it('should render a div with the todo text', () => {
@@ -54,19 +54,26 @@ describe('TodoList', () => {
       'Walk dog',
       'Read book'
     ];
+
     const component = renderIntoDocument(
       <ComponentList
         todos={todos}
       />
     );
-    const todosEle = scryRenderedComponentsWithType(component, Component);
-    const todo1 = ReactDOM.findDOMNode(todosEle[0]).textContent;
-    const todo2 = ReactDOM.findDOMNode(todosEle[1]).textContent;
-    const todo3 = ReactDOM.findDOMNode(todosEle[2]).textContent;
 
-    expect(todosEle.length).to.equal(3);
-    expect(todo1).to.equal('Mow lawn');
-    expect(todo2).to.equal('Walk dog');
-    expect(todo3).to.equal('Read book');
+    const todosEle = scryRenderedComponentsWithType(component, Component);
+    // const todo1 = ReactDOM.findDOMNode(todosEle[0]).textContent;
+    // const todo2 = ReactDOM.findDOMNode(todosEle[1]).textContent;
+    // const todo3 = ReactDOM.findDOMNode(todosEle[2]).textContent;
+
+
+    expect(todosEle.length).to.equal(todos.length);
+    // expect(todo1).to.equal(todos[0]);
+    // expect(todo2).to.equal(todos[1]);
+    // expect(todo3).to.equal(todos[2]);
+
+    //dynamic
+    todosEle.forEach((e, i) =>
+      expect(ReactDOM.findDOMNode(e).textContent).to.equal(todos[i]));
   });
 });
